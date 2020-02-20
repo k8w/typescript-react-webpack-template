@@ -1,4 +1,5 @@
 import React from 'react';
+import './Test.less';
 
 interface TestProps extends React.Props<any> {
 

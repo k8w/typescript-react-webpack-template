@@ -1,9 +1,9 @@
-const CopyPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        filename: 'main.js',
+        filename: 'main.[hash].js',
         path: __dirname + '/dist'
     },
     resolve: {
@@ -19,8 +19,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new CopyPlugin([
-            { from: 'res' },
-        ]),
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
     ],
 }
